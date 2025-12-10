@@ -1,0 +1,4 @@
+deployment:
+ replicas: 2
+ imageRepo: anilkathoju/mongodb
+ imageVersion: v1
