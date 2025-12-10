@@ -45,9 +45,12 @@ kind: Service
 metadata:
   name: mongodb
   namespace: roboshop
+  labels:
+    project: roboshop
+    environment: dev
+    component: mongodb
 spec:
   selector:
-  labels:
     project: roboshop
     environment: dev
     component: mongodb
