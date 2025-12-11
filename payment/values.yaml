@@ -1,0 +1,4 @@
+deployment:
+  imageVersion: "anilkathoju/payment:v1"
+service:
+  servicePort: 80

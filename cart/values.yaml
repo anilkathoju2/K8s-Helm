@@ -1,0 +1,4 @@
+deployment:
+  imageVersion: "anilkathoju/cart:v1"
+service:
+  servicePort: 80

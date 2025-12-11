@@ -1,0 +1,4 @@
+deployment:
+  imageVersion: "anilkathoju/shipping:v1"
+service:
+  servicePort: 80
