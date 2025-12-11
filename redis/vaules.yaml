@@ -1,0 +1,2 @@
+deployment:
+  imageVersion: redis:7.0
