@@ -23,7 +23,7 @@ spec:
    spec: 
     containers:
     - name: redis
-      image: "{{ Values.deployment.imageRepo }}"
+      image: "{{ .Values.deployment.imageRepo }}"
       imagePullPolicy: Always
       readinessProbe:
         tcpSocket:
