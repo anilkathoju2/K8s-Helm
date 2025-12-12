@@ -1,3 +1,3 @@
 deployment:
- replicas: 3
- imageRepo: "anilkathoju/frontend:v1"
+  replicas: 3
+  imageRepo: "anilkathoju/frontend:v1"
