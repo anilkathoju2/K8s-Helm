@@ -15,7 +15,8 @@ metadata:
   name: mysql
   namespace: roboshop
 spec:
-  replicas: "{{ .Values.deployment.replicas }}"
+  #replicas: "{{ .Values.deployment.replicas }}"
+  replicas: 1
   selector: 
     matchLabels:
       project: roboshop
