@@ -9,15 +9,45 @@ data:
     innodb_redo_log_capacity = 2G  
 
 ---
+# apiVersion: apps/v1
+# kind: Deployment
+# metadata: 
+#   name: mysql
+#   namespace: roboshop
+# spec:
+#   #replicas: "{{ .Values.deployment.replicas }}"
+#   replicas: 1
+#   selector: 
+#     matchLabels:
+#       project: roboshop
+#       component: mysql
+#       tier: db
+#   template:
+#     metadata:
+#       labels:
+#         project: roboshop
+#         component: mysql
+#         tier: db
+#     spec:
+#       containers:
+#         - name: mysql
+#           image: "{{ .Values.deployment.imageRepo }}:{{ .Values.deployment.imageVersion }}"
+#           imagePullPolicy: Always
+#           volumeMounts:
+#             - name: mysql-config
+#               mountPath: /etc/mysql/conf.d/my.cnf
+#               subPath: my.cnf
+#       volumes:
+#         - name: mysql-config
+#           configMap:
+#             name: mysql
 apiVersion: apps/v1
 kind: Deployment
-metadata: 
+metadata:
   name: mysql
-  namespace: roboshop
 spec:
-  #replicas: "{{ .Values.deployment.replicas }}"
-  replicas: 1
-  selector: 
+  replicas: {{ .Values.deployment.replicas }}
+  selector:
     matchLabels:
       project: roboshop
       component: mysql
@@ -42,22 +72,37 @@ spec:
           configMap:
             name: mysql
 
+
      
 ---
+# apiVersion: v1
+# kind: Service
+# metadata:
+#    name: mysql
+#    namespace: roboshop
+# spec:
+#   selector:
+#     project: roboshop
+#     component: mysql
+#     tier: db
+#   ports:   
+#   - protocol: TCP
+#     port: 3306
+#     targetPort: 3306
 apiVersion: v1
 kind: Service
 metadata:
-   name: mysql
-   namespace: roboshop
+  name: mysql
 spec:
   selector:
     project: roboshop
     component: mysql
     tier: db
-  ports:   
-  - protocol: TCP
-    port: 3306
-    targetPort: 3306
+  ports:
+    - protocol: TCP
+      port: 3306
+      targetPort: 3306
+
      
 
 
