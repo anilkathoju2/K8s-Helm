@@ -23,7 +23,7 @@ spec:
        spec:
         containers:
         -  name: frontend
-           image: "{{ .Values.deployment.imageVersion }}"
+           image: "{{ .Values.deployment.imageRepo }}"
            imagePullPolicy: Always
            ports:
            - name: liveness-port
