@@ -3,4 +3,4 @@ configmap:
 deployment:
   imageVersion: "anilkathoju/catalogue:v1"
 service:
-  servicePort: 80
+  servicePort: 8080
