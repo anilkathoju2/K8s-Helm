@@ -1,6 +1,7 @@
 configmap:
   mongoURL: "mongodb://mongodb:27017/catalogue"
 deployment:
-  imageVersion: "anilkathoju/catalogue:v1"
+  imageRepo: anilkathoju/catalogue
+  imageVersion: v1
 service:
   servicePort: 8080

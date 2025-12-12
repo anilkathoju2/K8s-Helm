@@ -8,7 +8,7 @@ metadata:
     component: frontend
     tier: frontend
 spec:
-  replicas: {{ .Values.deployment.replicas | int }}
+  replicas: "{{ .Values.deployment.replicas }}"
   selector:
     matchLabels:
       project: roboshop
@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: "{{ .Values.deployment.imageRepo }}"
+        image: "{{ .Values.deployment.imageRepo }}:{{ .Values.deployment.imageVersion }}:"
         imagePullPolicy: Always
         ports:
         - name: liveness-port

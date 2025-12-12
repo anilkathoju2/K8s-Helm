@@ -1,3 +1,4 @@
 deployment:
  replicas: 1
- imageRepo: "anilkathoju/mysql:v1"
+ imageRepo: anilkathoju/mysql
+ imageVersion: v1

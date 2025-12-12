@@ -1,3 +1,3 @@
 deployment:
-  imageRepo: "redis"
-  imageVersion: "7.0"
+  imageRepo: redis
+  imageVersion: 7.0

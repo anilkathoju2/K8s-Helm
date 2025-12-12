@@ -1,4 +1,5 @@
 deployment:
-  imageVersion: "anilkathoju/user:v1"
+  imageRepo: anilkathoju/user
+  imageVersion: v1
 service:
   servicePort: 8080

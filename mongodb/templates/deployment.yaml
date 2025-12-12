@@ -8,7 +8,7 @@ metadata:
     environment: dev
     component: mongodb
 spec: 
-  replicas: {{ .Values.deployment.replicas }}
+  replicas: "{{ .Values.deployment.replicas }}"
   selector:
     matchLabels: 
      project: roboshop
