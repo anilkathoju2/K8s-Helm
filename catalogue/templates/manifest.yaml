@@ -8,7 +8,7 @@ metadata:
     environment: dev
     component: catalogue
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       project: roboshop
