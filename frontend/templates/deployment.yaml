@@ -79,7 +79,7 @@ metadata:
     component: frontend
     tier: frontend
 spec:
-  replicas: "{{ .Values.deployment.replicas }}"
+  replicas: 1
   selector:
     matchLabels:
       project: roboshop
@@ -98,7 +98,7 @@ spec:
         imagePullPolicy: Always
         ports:
         - name: liveness-port
-          containerPort: 80
+          containerPort: 8080
         readinessProbe:
           httpGet:
             path: /
@@ -111,6 +111,15 @@ spec:
             port: liveness-port
           failureThreshold: 1
           periodSeconds: 15
+        volumeMounts:
+        - name: nginx-config
+          mountPath: /etc/nginx/nginx.conf
+          subPath: nginx.conf
+      volumes:
+      - name: nginx-config
+        configMap:
+          name: frontend
+---
 apiVersion: v1
 kind: Service
 metadata:
@@ -123,6 +132,6 @@ spec:
     component: frontend
     tier: frontend
   ports:
-    - protocol: TCP
-      port: 80
-      targetPort: 8080
+  - protocol: TCP
+    port: {{ .Values.service.portnumb }}
+    targetPort: 8080

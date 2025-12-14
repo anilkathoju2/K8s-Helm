@@ -2,3 +2,5 @@ deployment:
   replicas: 1
   imageRepo: anilkathoju/frontend
   imageVersion: v1
+service:
+   portnumb: 80
