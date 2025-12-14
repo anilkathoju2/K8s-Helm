@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
       - name: user
-        image: "{{ .Values.deployment.imageVersion }}"
+        image: "{{ .Values.deployment.imageRepo }}:{{ .Values.deployment.imageVersion }}"
         imagePullPolicy: Always
         readinessProbe:
           tcpSocket:
