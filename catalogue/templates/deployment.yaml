@@ -25,16 +25,16 @@ spec:
       - name: catalogue
         image: "{{ .Values.deployment.imageRepo }}:{{ .Values.deployment.imageVersion }}"
         imagePullPolicy: Always
-        readinessProbe:
-          tcpSocket:
-            port: 27017
-          initialDelaySeconds: 15
-          periodSeconds: 10
-        livenessProbe:
-          tcpSocket:
-            port: 27017
-          initialDelaySeconds: 15
-          periodSeconds: 10
+        # readinessProbe:
+        #   tcpSocket:
+        #     port: 27017
+        #   initialDelaySeconds: 15
+        #   periodSeconds: 10
+        # livenessProbe:
+        #   tcpSocket:
+        #     port: 27017
+        #   initialDelaySeconds: 15
+        #   periodSeconds: 10
 
 ---
 apiVersion: v1
